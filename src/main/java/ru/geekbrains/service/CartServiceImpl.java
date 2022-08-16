@@ -39,7 +39,6 @@ public class CartServiceImpl implements CartService {
                     "Для просмотра списка товаров в корзине введите команду: print");
         }
     }
-
     @Override
     public int getSum(Cart cart) {
         return cart.getSum();

@@ -1,6 +1,8 @@
 package ru.geekbrains;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.geekbrains.persist.cart.Cart;
 import ru.geekbrains.persist.product.Product;
 import ru.geekbrains.service.CartServiceImpl;
@@ -14,13 +16,6 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         ProductService  productService = context.getBean("productService", ProductService.class);
         CartServiceImpl cartService = context.getBean("cartServiceImpl", CartServiceImpl.class);
-
-        /*ручной ввод продуктов*/
-        productService.saveOrUpdate(new Product ("Кофе в зернах Lavazza Qualita oro 1 кг", 1570));
-        productService.saveOrUpdate(new Product ("Кофе в зернах Lavazza Qualita oro 1 кг", 1295));
-        productService.saveOrUpdate(new Product ( "Кофе EGOISTE Noir в зернаx 1000г.", 1399));
-        productService.saveOrUpdate(new Product ( "Кофе в капсулах Nescafe Dolce Gusto cappuccino 16 капсул ", 1132));
-        productService.saveOrUpdate(new Product ( "Кофе BUSHIDO Original сублимированный 100г.", 642));
 
         Scanner sc = new Scanner(System.in);
         boolean exit = false;

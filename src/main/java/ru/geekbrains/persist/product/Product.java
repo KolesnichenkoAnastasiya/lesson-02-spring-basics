@@ -8,7 +8,6 @@ public class Product {
         this.title = title;
         this.cost = cost;
     }
-
     public Product (String title, String cost) {
         this.title = title;
         this.cost = Integer.parseInt (cost);
@@ -22,14 +21,12 @@ public class Product {
     public String getProductTitle() {
         return title;
     }
-
     public void setProductTitle(String title) {
         this.title = title;
     }
     public int getCost() {
         return cost;
     }
-
     public void setCost(int cost) {
         this.cost = cost;
     }

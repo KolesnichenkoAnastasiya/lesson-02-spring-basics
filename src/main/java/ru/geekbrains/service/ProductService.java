@@ -4,11 +4,12 @@ import ru.geekbrains.persist.product.Product;
 import ru.geekbrains.persist.product.ProductRepository;
 
 import java.util.List;
-
 public class ProductService {
     private final ProductRepository productRepository;
+
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
+        productRepository.init();
     }
     public List<Product> getProductList() {
         return productRepository.findAll();
@@ -28,12 +29,8 @@ public class ProductService {
             return productRepository.findById(id);
         } else return null;
     }
-
     public void deleteById(long id) {
         productRepository.deleteById(id);
     }
 
-    public long getCount() {
-        return productRepository.getCount();
-    }
 }
